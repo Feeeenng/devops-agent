@@ -93,3 +93,20 @@ else
   echo "do not support this arch"
   exit 1
 fi
+
+
+# argocd-cli
+ARGOCD_VERSION=2.8.3
+if [[ ${ARCH} == 'x86_64' ]]; then
+  curl -fLO https://github.com/argoproj/argo-cd/releases/download/v${ARGOCD_VERSION}/argocd-linux-amd64  && \
+  chmod +x argocd-linux-amd64 && \
+  mv argocd-linux-amd64 /usr/bin/argocd
+elif [[ ${ARCH} == 'aarch64' ]]
+then
+  curl -fLO https://github.com/argoproj/argo-cd/releases/download/v${ARGOCD_VERSION}/argocd-linux-arm64  && \
+  chmod +x argocd-linux-arm64 && \
+  mv argocd-linux-arm64 /usr/bin/argocd
+else
+  echo "do not support this arch"
+  exit 1
+fi
