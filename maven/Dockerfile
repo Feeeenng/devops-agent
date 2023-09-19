@@ -1,4 +1,4 @@
-FROM kubespheredev/builder-base:v3.1.0
+FROM feeeng/builder-base:v3.4.0
 
 ARG JDK_VERSION 1.8.0
 
